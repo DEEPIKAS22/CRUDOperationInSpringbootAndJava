@@ -11,26 +11,26 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
-
 @Entity
-@Table(name="users", uniqueConstraints={@UniqueConstraint(columnNames ={"email"})})
+@Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = { "email" }) })
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	private String name;	
-	private Date dob;	
-	private String email;	
-	private String password;	
+
+	private String name;
+	private Date dob;
+	private String email;
+	private String password;
 	private String image;
 
-	public User() {}
-	
+	public User() {
+	}
+
 	public User(String name, Date dob, String email, String password, String image) {
 		super();
-		
+
 		this.name = name;
 		this.dob = dob;
 		this.email = email;
@@ -85,28 +85,25 @@ public class User {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
+
 	public String getFormattedDob() {
 		SimpleDateFormat d = new SimpleDateFormat("dd MMM yyyy");
 		return d.format(dob);
 	}
+
 	public String getImageUrl() {
-		
-		if(image == null) {
+
+		if (image == null) {
 			return "/images/user.png";
-		}else {
-			String UPLOAD_DIR = System.getProperty("user.dir") + "/src/main/resources/static/uploads/";				
-			if(new File((UPLOAD_DIR + image.trim())).exists()) {
-				 return "/uploads/" + image.trim();
-			} 
-			else {
-				return"/images/user.png";
+		} else {
+			String UPLOAD_DIR = System.getProperty("user.dir") + "/src/main/resources/static/uploads/";
+			if (new File((UPLOAD_DIR + image.trim())).exists()) {
+				return "/uploads/" + image.trim();
+			} else {
+				return "/images/user.png";
 			}
 		}
-		
-	
-		
-		
+
 	}
-	
+
 }
