@@ -102,12 +102,5 @@ It will take few seconds to launch the applications. after launching you can bro
 <b>NOTE -</b> if you are configuring this type of project first time, you may face many errors, my suggestion is - to run application - and check the browser with this URL [ [http://localhost:8080](http://localhost:8080)] . If this page is available that means your errors are minor and you are able to run this applicaton 
 <br>In my case this is working just fine!
 
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
 
 
